@@ -1,33 +1,92 @@
-HELP.md
+############################################################
+#  IntelliJ IDEA
+############################################################
+.idea/                       # Todas as configs da IDE
+*.iml                        # Arquivos de módulo
+*.iws                        # Arquivos de workspace
+out/                         # Pasta de build padrão da IDE
+
+############################################################
+#  Compilados, caches & logs
+############################################################
+*.class
+*.jar
+*.war
+*.ear
+*.log
+hs_err_pid*                  # Dumps de erro da JVM
+*.hprof                      # Heap dumps
+
+############################################################
+#  Maven
+############################################################
 target/
-.mvn/wrapper/maven-wrapper.jar
-!**/src/main/**/target/
-!**/src/test/**/target/
+# arquivos auxiliares de release/versions plugin
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
 
-### STS ###
-.apt_generated
+############################################################
+#  Gradle
+############################################################
+.gradle/
+build/                       # Diretório de build (root ou módulos)
+!gradle/wrapper/gradle-wrapper.jar  # Mantenha o wrapper jar versão-controlado
+
+############################################################
+#  Configurações & segredos (Spring Boot, Quarkus, Micronaut…)
+############################################################
+# Arquivos de ambiente
+.env
+.env.*
+# Propriedades/YAML de configuração
+application.properties
+application-*.properties
+application.yml
+application-*.yml
+# Chaves, certificados, credenciais
+*.keystore
+*.p12
+*.pem
+*.crt
+*.key
+
+############################################################
+#  Ferramentas & relatórios
+############################################################
+# Test coverage
+.jacoco/
+# Relatórios de cobertura/sonar
+coverage/
+sonar/report-task.txt
+
+############################################################
+#  Docker / containerização
+############################################################
+**/docker-compose.override.yml
+# Build cache
+**/docker/target/
+**/docker/build/
+
+############################################################
+#  Sistemas operacionais & editores
+############################################################
+# macOS / Windows
+.DS_Store
+Thumbs.db
+# Vim/Emacs/etc.
+*~
+*.swp
+*.swo
+*.tmp
+
+############################################################
+#  IDEs alternativos (Eclipse, VS Code, etc.) — caso apareçam
+############################################################
 .classpath
-.factorypath
 .project
-.settings
-.springBeans
-.sts4-cache
-
-### IntelliJ IDEA ###
-.idea
-*.iws
-*.iml
-*.ipr
-
-### NetBeans ###
-/nbproject/private/
-/nbbuild/
-/dist/
-/nbdist/
-/.nb-gradle/
-build/
-!**/src/main/**/build/
-!**/src/test/**/build/
-
-### VS Code ###
+.settings/
 .vscode/
